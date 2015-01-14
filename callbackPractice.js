@@ -1,7 +1,6 @@
 /* In this repo your job is to write functions to make each function call work properly.
 Below is a sample problem 
 
-  //code here for sayHi
 
    sayHi('Hi Katie', function(thingToSay){
       alert(thingToSay);
@@ -27,6 +26,15 @@ and what you should write is the favNum function that makes the code above work,
   //Code Here for first
   
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
+var first = function (arr, callback) {
+  callback(arr[0]);
+}
+
+var firstName = function (thing) {
+  console.log("The first name in names is " + thing);
+}
+
 first(names, function(firstName){
   console.log('The first name in names is ', firstName)
 });
@@ -39,6 +47,13 @@ first(names, function(firstName){
 
 
   //Code Here for last
+var last = function(arr, callback) {
+  callback(arr[arr.length-1]);
+}
+
+var lastName = function(name) {
+  console.log('The last name in names is ', name);
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 last(names, function(lastName){
@@ -51,12 +66,14 @@ last(names, function(lastName){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
+var cb = function (x) {
+  console.log("The answer is " + x)
+}
 
+var multiply = function (num1, num2, callback) {
+  callback(num1 * num2);
+}
 
-
-
-
-  //Code Here for multiply
 
 multiply(4, 3, function(answer){
   console.log('The answer is ', answer); //should console.log 12
@@ -68,13 +85,26 @@ multiply(4, 3, function(answer){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
+var cb = function(x, name) {
+  if(x === true){
+    console.log(name + ' is in the array');
+  } else {
+    console.log(name + ' is not in the array');
+  }
+}
 
-
-
-
-  //Code Here for contains
+var contains = function (arr, str, callback) {
+   var x = false;
+   if (arr.indexOf(str) !== -1) {
+       x = true;
+   } else {
+        x = false;
+   } 
+   callback(x, str);   
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
 contains(names, 'Colt', function(result){
   if(result === true){
     console.log('Colt is in the array');
@@ -88,11 +118,24 @@ contains(names, 'Colt', function(result){
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
+var remove = function (x) {
+ console.log(x);
 
+}
 
-
-
-    //Code Here for uniq
+var uniq = function (arr, callback) {
+   var newArray = [];
+   var seen = {};
+   var j = 0;
+   for (var i = 0; i < arr.length; i++) {
+      var item = arr[i];
+         if (seen[arr[i]] !== 1) {
+           seen[item] = 1;
+           newArray[j++] = item;
+    }
+  }
+   callback(newArray);    
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 uniq(names, function(uniqArr){
@@ -105,10 +148,18 @@ uniq(names, function(uniqArr){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
+-------------------Not Completed ---------------------
 
-
-
-    //Code Here for each
+var each = function (arr, callback) {  
+ for (var i = 0; i < arr.length; i++) {
+      
+      console.log(arr[i]);
+ }
+  callback(name, indice);
+}
+var order = function(name, indice) {
+  console.log("The name in the " + indice + "position is " + name);
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 each(names, function(item, indice){
@@ -122,7 +173,16 @@ each(names, function(item, indice){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
+var getUserById = function(arr, idnum, callback) {
+    if (arr.indexOf(idnum) !== -1) {
+         id = idnum
+    }
+    callback();
+}
 
+var cb = function (user) {
+
+}
 
 
  //code here for getUserById
