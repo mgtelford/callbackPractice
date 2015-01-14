@@ -148,39 +148,39 @@ uniq(names, function(uniqArr){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
--------------------Not Completed ---------------------
-
-var each = function (arr, callback) {  
- for (var i = 0; i < arr.length; i++) {
-      
-      console.log(arr[i]);
- }
-  callback(name, indice);
+var name;
+var indice;
+var each = function (arr, callback, location) {  
+     name = arr[location];
+     indice = location;
+     callback(name, location)
 }
+
 var order = function(name, indice) {
-  console.log("The name in the " + indice + "position is " + name);
+  console.log("The name in the " + indice + " position is " + name);
 }
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
 });
 
 
-
-
-
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
-
+---------------Incomplete-----------------------------------
 
 var getUserById = function(arr, idnum, callback) {
-    if (arr.indexOf(idnum) !== -1) {
-         id = idnum
-    }
+ for (var i = 0; i < arr.length; i++) {
+    var name = arr[i].name;
+
+ }
+  }
     callback();
 }
 
 var cb = function (user) {
+  console.log("The user with the id 16t has the email of " + user.email + " the name of " + user.name + " and the address of " + user.address)
 
 }
 
